@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6,
 .markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
 .markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3,
 .inline-title {
-  font-family: var(--h1-font) !important;
+  font-family: var(--h1-font);
   font-style: italic;
   font-weight: 700;
   color: var(--text-normal);
