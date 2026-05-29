@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <h1>🌸 Pastel Theme for Obsidian</h1>
+  <h1>🌸 Pastel</h1>
   <p><b>A beautifully soft, highly-animated, and premium theme for Obsidian.</b></p>
   
   <br>
