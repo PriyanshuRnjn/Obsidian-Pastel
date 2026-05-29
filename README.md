@@ -21,17 +21,6 @@
 
 ---
 
-## 📖 Table of Contents
-- [About](#-about)
-- [Screenshots](#-screenshots)
-- [Features](#-features)
-- [Customization](#-customization-style-settings)
-- [Installation](#-installation)
-- [Inspiration](#-inspiration-the-vajan-app)
-
----
-
-## ✦ About
 
 **Pastel** transforms your Obsidian vault into a lush, native-feeling app environment. Moving away from stark and harsh contrasts, Pastel utilizes a carefully curated selection of warm colors, smooth micro-interactions, and premium Cupertino-inspired rounded UI components to create a serene and focused writing experience.
 
