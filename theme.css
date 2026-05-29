@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=Nunito:wght@400;600;700&display=swap');
+
+/* Base theme settings */
+.theme-light, .theme-dark {
+  /* Fonts */
+  --font-text: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-interface: var(--font-text);
+  --h1-font: 'Cormorant Garamond', serif;
+  --h2-font: var(--h1-font);
+  --h3-font: var(--h1-font);
+  --h4-font: var(--font-text);
+  --h5-font: var(--font-text);
+  --h6-font: var(--font-text);
+
+  /* Headers styles based on user's app */
+  --h1-weight: 700;
+  --h1-style: italic;
+  --h2-weight: 700;
+  --h2-style: italic;
+  --h3-weight: 700;
+  --h3-style: italic;
+
+  /* Accent Color (Soft Vibrant Red/Pink) */
+  --color-accent: #f92f60;
+  --color-accent-hover: #ff4a75;
+  --color-accent-active: #d61845;
+  --text-accent: var(--color-accent);
+  --text-accent-hover: var(--color-accent-hover);
+  --interactive-accent: var(--color-accent);
+  --interactive-accent-hover: var(--color-accent-hover);
+  
+  /* Cupertino inspired variables */
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
+  --shadow-s: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-m: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-l: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.theme-light {
+  /* Pastel Light Theme Colors */
+  --color-base-00: #fff5f5; /* App background */
+  --color-base-10: #fcecec; /* Sidebar */
+  --color-base-20: #f8e1e1;
+  --color-base-25: #f4d6d6;
+  --color-base-30: #eed0d0;
+  --color-base-40: #e0baba;
+  
+  --text-normal: #2a1b1c; /* Much darker, high contrast */
+  --text-muted: #5e4d4e;
+  --text-faint: #8f7577;
+  
+  --background-primary: var(--color-base-00);
+  --background-secondary: var(--color-base-10);
+  --background-secondary-alt: var(--color-base-20);
+  
+  /* Inputs / UI */
+  --background-modifier-border: rgba(249, 47, 96, 0.15);
+  --background-modifier-hover: rgba(249, 47, 96, 0.08);
+  --background-modifier-active: rgba(249, 47, 96, 0.12);
+  --background-modifier-error: rgba(232, 50, 74, 0.2);
+  
+  /* Custom Variables for gradients */
+  --active-gradient-start: rgba(249, 47, 96, 0.15);
+  --active-gradient-end: rgba(249, 47, 96, 0.05);
+}
+
+.theme-dark {
+  /* Pastel Dark Theme Colors - Elegant Dark Rose */
+  --color-base-00: #1f1617; /* Slightly lighter than pitch black */
+  --color-base-10: #291d1f; 
+  --color-base-20: #362629;
+  --color-base-25: #3d2c2f;
+  --color-base-30: #4a3639;
+  --color-base-40: #594246;
+  
+  /* Text */
+  --text-normal: #ffe8eb; /* Softer, slightly pink-tinted white */
+  --text-muted: #d4bac0;
+  --text-faint: #9c8389;
+  
+  /* Dark Mode specific Accents (softer, glowing pastels) */
+  --color-accent: #ff5c7c; /* Brighter, softer pink/red for dark mode */
+  --color-accent-hover: #ff7f99;
+  --color-accent-active: #ff476b;
+  
+  --background-primary: var(--color-base-00);
+  --background-secondary: var(--color-base-10);
+  --background-secondary-alt: var(--color-base-20);
+  
+  /* Inputs / UI */
+  --background-modifier-border: rgba(255, 92, 124, 0.15);
+  --background-modifier-hover: rgba(255, 92, 124, 0.1);
+  --background-modifier-active: rgba(255, 92, 124, 0.2);
+  
+  /* Custom Variables for gradients */
+  --active-gradient-start: rgba(255, 92, 124, 0.25);
+  --active-gradient-end: rgba(255, 92, 124, 0.05);
+}
+
+/* ========================================= */
+/* TYPOGRAPHY */
+/* ========================================= */
+body {
+  font-family: var(--font-text);
+}
+
+h1, h2, h3, h4, h5, h6,
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
+.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3,
+.inline-title {
+  font-family: var(--h1-font) !important;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--text-normal);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1, .markdown-rendered h1, .markdown-preview-view h1, .inline-title { font-size: 2.2em; }
+h2, .markdown-rendered h2, .markdown-preview-view h2 { font-size: 1.8em; }
+h3, .markdown-rendered h3, .markdown-preview-view h3 { font-size: 1.5em; }
+
+/* Centered titles and inline note names */
+.markdown-rendered h1,
+.inline-title {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.04;
+}
+
+/* Body Accents */
+strong, .markdown-rendered strong, .cm-strong {
+  /* Removed the red color accent from bold text so it looks normal */
+  font-weight: 800;
+}
+
+em, .markdown-rendered em, .cm-em {
+  font-style: italic;
+  /* Removed the red color so standard italics aren't highlighted */
+}
+
+/* Accent bullet points */
+.markdown-rendered ul li::marker, 
+.markdown-rendered ol li::marker {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* ========================================= */
+/* CUPERTINO & PREMIUM APP STYLING */
+/* ========================================= */
+
+/* Round corners on workspace leaves */
+.workspace-leaf-content {
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+  overflow: hidden;
+  margin: 4px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.workspace-leaf-content:focus-within {
+  box-shadow: var(--shadow-m);
+}
+
+/* Tabs */
+.workspace-tab-header {
+  border-radius: var(--radius-s);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0 2px;
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--color-base-20);
+  box-shadow: 0 2px 8px var(--active-gradient-start);
+  transform: translateY(-1px);
+}
+
+.workspace-tab-header:hover:not(.is-active) {
+  background-color: var(--background-modifier-hover);
+  transform: translateY(-1px);
+}
+
+/* Buttons */
+button, .clickable-icon {
+  border-radius: var(--radius-l);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.clickable-icon:hover {
+  background-color: var(--background-modifier-hover);
+  transform: scale(1.1);
+}
+
+button.mod-cta {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(249, 47, 96, 0.3);
+}
+
+button.mod-cta:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(249, 47, 96, 0.4);
+}
+
+/* Modals */
+.modal {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-l);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes modalPop {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Callouts / Blockquotes - Styled like Premium App Cards */
+.callout, .markdown-rendered blockquote {
+  border-radius: var(--radius-l);
+  border: 1px solid rgba(249, 47, 96, 0.1);
+  background: linear-gradient(135deg, var(--color-base-00) 0%, var(--color-base-20) 100%);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(249, 47, 96, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.callout:hover, .markdown-rendered blockquote:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(249, 47, 96, 0.12);
+}
+
+/* Tags */
+.tag {
+  background-color: rgba(249, 47, 96, 0.1);
+  color: var(--color-accent);
+  border-radius: var(--radius-l); /* more pill like */
+  padding: 4px 12px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tag:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: scale(1.08) translateY(-1px);
+  box-shadow: 0 4px 10px rgba(249, 47, 96, 0.3);
+}
+
+/* ========================================= */
+/* ANIMATIONS & HOVERS */
+/* ========================================= */
+
+/* Sidebar nav items */
+.nav-file-title, .nav-folder-title {
+  border-radius: var(--radius-m);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Active Nav Item - Clean highlight */
+.nav-file-title.is-active, .nav-folder-title.is-active {
+  background-color: var(--background-modifier-active);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.nav-file-title:hover, .nav-folder-title:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Checkboxes */
+input[type=checkbox] {
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(249, 47, 96, 0.5);
+  transform: scale(1.1);
+}
+
+/* Links */
+.cm-link, .cm-hmd-internal-link, a.internal-link {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.cm-link:hover, .cm-hmd-internal-link:hover, a.internal-link:hover {
+  color: var(--color-accent-hover);
+  text-shadow: 0 0 8px rgba(249, 47, 96, 0.3);
+}
+
+/* Image Hover */
+.markdown-rendered img {
+  border-radius: var(--radius-m);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.markdown-rendered img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-l);
+}
+
+/* Graph view accent */
+.graph-view.color-fill {
+  color: var(--color-accent);
+}
+
+/* ========================================= */
+/* STYLE SETTINGS / MULTIPLE PALETTES        */
+/* ========================================= */
+
+/* @settings
+name: Pastel Settings
+id: pastel-theme
+settings:
+    - 
+        id: pastel-color-scheme
+        title: Color Palette
+        description: Select your preferred app palette.
+        type: class-select
+        allowEmpty: false
+        default: pastel-rose
+        options:
+            - { label: Rose, value: pastel-rose }
+            - { label: Bean, value: pastel-bean }
+            - { label: Sage, value: pastel-sage }
+            - { label: Honey, value: pastel-honey }
+            - { label: Clay, value: pastel-clay }
+            - { label: Lagoon, value: pastel-lagoon }
+            - { label: Berry, value: pastel-berry }
+*/
+
+/* 1. Rose (Default fallback is already Rose, but here for completeness) */
+body.pastel-rose {
+  --color-accent: #f92f60;
+  --color-accent-hover: #ff4a75;
+  --color-accent-active: #d61845;
+}
+
+/* 2. Bean (Warm cream and cocoa orange) */
+body.pastel-bean {
+  --color-accent: #c8795a;
+  --color-accent-hover: #df8a69;
+  --color-accent-active: #b5674a;
+  --active-gradient-start: rgba(200, 121, 90, 0.25);
+  --active-gradient-end: rgba(200, 121, 90, 0.05);
+}
+body.pastel-bean.theme-light {
+  --color-base-00: #fcf4f1;
+  --color-base-10: #f8e9e3;
+  --color-base-20: #f0ded6;
+}
+
+/* 3. Sage (Muted garden greens) */
+body.pastel-sage {
+  --color-accent: #6F9275;
+  --color-accent-hover: #7ea385;
+  --color-accent-active: #5f7d64;
+  --active-gradient-start: rgba(111, 146, 117, 0.25);
+  --active-gradient-end: rgba(111, 146, 117, 0.05);
+}
+body.pastel-sage.theme-light {
+  --color-base-00: #EAF0DE;
+  --color-base-10: #dfe8ce;
+  --color-base-20: #d4e0be;
+}
+
+/* 4. Honey (Soft yellow and leaf green) */
+body.pastel-honey {
+  --color-accent: #C79A2E;
+  --color-accent-hover: #dfaf3e;
+  --color-accent-active: #b08624;
+  --active-gradient-start: rgba(199, 154, 46, 0.25);
+  --active-gradient-end: rgba(199, 154, 46, 0.05);
+}
+body.pastel-honey.theme-light {
+  --color-base-00: #F8E8B7;
+  --color-base-10: #f0dea5;
+  --color-base-20: #e8d594;
+}
+
+/* 5. Clay (Earthy warm neutrals) */
+body.pastel-clay {
+  --color-accent: #B97052;
+  --color-accent-hover: #d18363;
+  --color-accent-active: #a15e42;
+  --active-gradient-start: rgba(185, 112, 82, 0.25);
+  --active-gradient-end: rgba(185, 112, 82, 0.05);
+}
+body.pastel-clay.theme-light {
+  --color-base-00: #F4D9C9;
+  --color-base-10: #ebd0bf;
+  --color-base-20: #e3c7b5;
+}
+
+/* 6. Lagoon (Teal, mist, and forest) */
+body.pastel-lagoon {
+  --color-accent: #2F7D73;
+  --color-accent-hover: #3b9489;
+  --color-accent-active: #25665e;
+  --active-gradient-start: rgba(47, 125, 115, 0.25);
+  --active-gradient-end: rgba(47, 125, 115, 0.05);
+}
+body.pastel-lagoon.theme-light {
+  --color-base-00: #D7EFE8;
+  --color-base-10: #cce8e0;
+  --color-base-20: #c1e0d8;
+}
+
+/* 7. Berry (Berry, cream, and mint) */
+body.pastel-berry {
+  --color-accent: #9B5C75;
+  --color-accent-hover: #b36e89;
+  --color-accent-active: #824a61;
+  --active-gradient-start: rgba(155, 92, 117, 0.25);
+  --active-gradient-end: rgba(155, 92, 117, 0.05);
+}
+body.pastel-berry.theme-light {
+  --color-base-00: #F1DCE4;
+  --color-base-10: #e8d0d9;
+  --color-base-20: #dfc5ce;
+}
